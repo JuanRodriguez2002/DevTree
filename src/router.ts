@@ -3,6 +3,11 @@ const router = Router();
 
 //Routing
 
+//Autentica cion y Registro
+
+router.post('/auth/register', (req, res)=>{
+    console.log(req.body);
+})
 
 
 export default router;
