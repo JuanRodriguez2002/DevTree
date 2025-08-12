@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 interface IUser {
+    handle: String
     name: String
     email: String
     password: String
@@ -8,6 +9,14 @@ interface IUser {
 
 
 const userSchema = new Schema({
+    handle:{
+        type: String,
+        require: true,
+        trim: true,
+        unique: true,
+        lowercase: true
+    },
+
     name:{
         type: String,
         require: true,
@@ -18,7 +27,9 @@ const userSchema = new Schema({
         type: String,
         require: true,
         trim: true,
-        unique: true
+        unique: true,
+        lowercase:true
+
     },
 
     password:{
